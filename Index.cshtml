@@ -1,0 +1,34 @@
+@model IEnumerable<STUDENT.Models.Person>
+
+<div class="container">
+    <h1>Persons</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.Name</td>
+                    <td>@person.Email</td>
+                    <td>@person.Password</td><div class="null"></div>
+                    <td>@person.Age</td>
+                    <td>
+                        <a href="@Url.Action("Details", "Person", new { id = person.Id })" class="btn btn-info">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Create", "Person")" class="btn btn-primary">Create New</a>
+</div>

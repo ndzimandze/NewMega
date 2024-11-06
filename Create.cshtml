@@ -1,0 +1,24 @@
+@model STUDENT.Models.Person
+
+<div class="containe">
+<h1>Create Person</h1>
+<div class="card">
+  <div class="card-body">
+    <form asp-action="Create" method="post">
+    <div class="form-group md-3">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" placeholder="name" class="form-control" />
+    </div>
+    <div class="form-group md-3">
+        <label asp-for="Age">age</label>
+        <input asp-for="Age" placeholder="age" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+  </div>
+</div>
+
+
+
+<a href="@Url.Action("Index", "Person")" class="btn btn-secondary">Back to List</a>
+</div>
